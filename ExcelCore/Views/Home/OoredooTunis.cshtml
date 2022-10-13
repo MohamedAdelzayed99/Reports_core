@@ -1,0 +1,33 @@
+﻿@model ExcelCore.Models.FileUpload
+@{
+    ViewData["Title"] = "FTP Automated ARPUPLUS RBT";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    
+}
+<style>
+    h1 {
+        padding: 50px;
+        font-weight: 500;
+    }
+</style>
+<h1> <span style="color:">Ooredoo Tunis RBT Upload </span></h1>
+<div class="form-group row">
+    <form asp-action="OoredooTunis" class="text-left form-validate" enctype="multipart/form-data">
+
+         <label for="start">Choose date:</label>
+        <div class="form-group col-sm-12" id="date"  min="2000-01-01" max="2040-12-31">
+            <input asp-for="rbtDate" type="date">
+            <br>
+            <br>
+
+            <div class="file-select-button" id="fileName">Upload Excel File</div>
+            <input asp-for="XlsFiles" type="file" id="chooseFile" AllowMultiple="true">
+        </div>
+        <br />
+        <br />
+
+        <div class="form-group col-sm-6">
+            <button type="submit" class="btn btn-primary">Read Excel File</button>
+        </div>
+    </form>
+</div>
